@@ -1,0 +1,98 @@
+.entry-featured-image {
+    overflow: hidden;
+    height: 150px;
+}
+
+.entry-featured-image img {
+    display: block;
+    width: 100%;
+}
+
+
+.reset form {
+	margin-bottom: initial;
+}
+
+.reset fieldset {
+	margin-bottom: initial;
+}
+
+.reset input[type="text"],
+.reset input[type="password"],
+.reset input[type="email"],
+.reset textarea,
+.reset select {
+	font-family: initial;
+	font-size: initial;
+	color: initial;
+	background: initial;
+	border: initial;
+	-moz-border-radius: initial;
+	-webkit-border-radius: initial;
+	border-radius: initial;
+	padding: initial;
+	width: initial;
+	max-width: initial;
+	display: initial;
+	margin: initial;
+	outline: initial;
+}
+
+.reset select {
+	padding: initial;
+}
+
+.reset input[type="text"]:focus,
+.reset input[type="password"]:focus,
+.reset input[type="email"]:focus,
+.reset textarea:focus {
+	-moz-box-shadow: initial;
+	-webkit-box-shadow: initial;
+	box-shadow:  initial;
+}
+
+.reset textarea {
+	min-height: initial;
+}
+
+.reset label,
+.reset legend {
+	display: initial;
+}
+
+.reset input[type="checkbox"] {
+	display: initial;
+}
+
+.reset button,
+.reset input[type="submit"],
+.reset input[type="reset"],
+.reset input[type="button"] {
+	font-family: initial;
+	font-size: initial;
+	margin: initial;
+	padding: initial;
+	color: initial;
+	background-color: initial;
+	border: initial;
+	text-decoration: initial;
+	border-radius: initial;
+	moz-border-radius: initial;
+	-webkit-border-radius: initial;
+	-ms-border-radius: initial;
+	outline: initial;
+	cursor: initial;
+}
+
+.reset button:hover,
+.reset input[type="submit"]:hover,
+.reset input[type="reset"]:hover,
+.reset input[type="button"]:hover,
+.reset button:active,
+.reset input[type="submit"]:active,
+.reset input[type="reset"]:active,
+.reset input[type="button"]:active {
+	color: initial;
+	background-color: initial;
+	border: initial;
+}

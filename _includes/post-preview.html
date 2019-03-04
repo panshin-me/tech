@@ -1,0 +1,36 @@
+<article class="post-162 post type-post status-publish format-standard {% if post.image.feature %}has-post-thumbnail{% endif %} hentry">
+
+    <div class="entry-meta-group clearfix">
+        <div class="grid_2 alpha">
+            <time class="entry-date entry-time updated" datetime="{{ post.date }}"><a href="{{ post.url }}" title="{{ post.date }}"
+                    rel="bookmark"><span class="entry-date-day">{{ post.date | date: "%e" }}</span><span class="entry-date-month-year">{{
+                        post.date | date: "%b %Y" }}</span></a></time> </div>
+        <div class="grid_8 omega">
+            <h2 class="entry-title">
+                <a href="{{ post.url }}" title="Permalink to {{ post.title }}" rel="bookmark">{{ post.title }}</a>
+            </h2>
+            <div class="entry-meta">
+                <span class="entry-author author vcard">by <span class="entry-author-name fn">Yura</span></span>
+                <span class="entry-meta-sep">&sdot; </span></div><!-- .entry-meta -->
+        </div>
+    </div>
+
+    <div class="entry-content clearfix">
+        {% if post.image.feature %}
+        <div class="entry-featured-image">
+            <a href="{{ post.url }}" title="{{ post.title }}">
+                <img width="200" height="180" src="{{ post.image.feature }}" class="entry-image" alt="" />
+            </a>
+        </div>
+        {% endif %}
+        {% if post.content contains site.excerpt_separator %}
+        <p>{{ post.excerpt }}</p>
+        <p>
+            <a href="{{ post.url }}" class="more-link">
+                <span>Read More &rarr;</span>
+            </a>
+        </p>
+        {% endif %}
+    </div> <!-- end .entry-content -->
+
+</article><!-- #post-## -->

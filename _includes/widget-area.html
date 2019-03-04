@@ -1,0 +1,58 @@
+<div id="secondary" class="grid_5 widget-area" role="complementary">
+    <div id="sidebar">
+        <aside id="text-4" class="widget widget_text widget-widget_text clearfix">
+            <div class="widget-wrap widget-inside">
+                <div class="textwidget"><a target='_blank' href='http://www.ebates.ca/referrer?referrerid=liTPHcJWGxk%3D%0D%0A&src=BlogButton'><img
+                            src='//static.ebates.ca/static/images/refer-a-friend/ebates-button.1.0.2.png' alt='Ebates.ca' /></a></div>
+            </div>
+        </aside>
+        <!-- <aside id="text-2" class="widget widget_text widget-widget_text clearfix">
+                <div class="widget-wrap widget-inside">
+                    <div class="textwidget">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px"
+                            data-ad-client="ca-pub-1370752798816511" data-ad-slot="8200823654"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </aside> -->
+        <aside id="recent-posts-2" class="widget widget_recent_entries widget-widget_recent_entries clearfix">
+            <div class="widget-wrap widget-inside">
+                <h3 class="widget-title">Recent Posts</h3>
+                <ul>
+                    {% for post in site.posts limit:5 %}
+                    <li>
+                        <a href="{{post.url}}">{{post.title}}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+        <!-- <aside id="text-3" class="widget widget_text widget-widget_text clearfix">
+                <div class="widget-wrap widget-inside">
+                    <div class="textwidget">
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle" style="display:inline-block;width:200px;height:90px"
+                            data-ad-client="ca-pub-1370752798816511" data-ad-slot="2154290053"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </aside> -->
+        <aside id="categories-2" class="widget widget_categories widget-widget_categories clearfix">
+            <div class="widget-wrap widget-inside">
+                <h3 class="widget-title">Categories</h3>
+                <ul>
+                    {% for category in site.categories %}
+                    {% capture name %}{{ category | first }}{% endcapture %}
+                    <li class="cat-item"><a href="/category/{{ name }}">{{
+                            name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div> <!-- end #sidebar -->
+</div> <!-- end .grid_5 -->

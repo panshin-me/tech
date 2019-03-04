@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{site.title}}</title>
+
+    <link rel="stylesheet" href="/assets/themes/contango/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/assets/css/custom-style.css" type="text/css" media="all" />
+    <link rel='stylesheet' id='contango-css-960-css' href='/assets/themes/contango/960.css'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='contango-google-fonts-css' href='http://fonts.googleapis.com/css?family=Open+Sans%7CNixie+One&#038;ver=4.9.8'
+        type='text/css' media='all' />
+    <style type="text/css" id="custom-background-css">
+        body.custom-background {
+            background-image: url("/assets/themes/contango/bg-pattern.png");
+            background-position: left top;
+            background-size: auto;
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body class="blog custom-background">
+    <div class="wrapper hfeed site">
+        <header id="masthead" class="site-header" role="banner">
+            <div class="container_16 clearfix">
+                <div class="grid_16">
+                    <div id="headimg">
+                        <div id="logo-text">
+                            <span class="site-name"><a href="/" title="{ Tech Blog }" rel="home">{ Tech
+                                    Blog }</a></span>
+                            <span class="site-description"></span>
+                        </div><!-- end of #logo -->
+                    </div>
+                </div>
+            </div>
+        </header><!-- #masthead -->
+        <div class="container_16 clearfix">
+            <nav id="site-navigation" class="grid_16 main-navigation" role="navigation">
+                <div class="menu clearfix">
+                    <ul id="menu-main" class="sf-menu">
+                        {% for category in site.categories %}
+                        {% capture name %}{{ category | first }}{% endcapture %}
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="/category/{{ name }}">{{
+                                name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </nav><!-- #site-navigation -->
+        </div>
+        {{ content }}
+        <div class="container_16 containter_footer">
+            <footer id="colophon" class="grid_16 site-footer" role="contentinfo">
+                <div class="copyright clearfix">
+                    <div class="copyright_inside">
+                        &copy; Copyright 2018 - <a href="{{site.baseurl}}">{ Tech Blog }</a> </div>
+                </div>
+                <div class="credit clearfix">
+                    <div class="credit_inside">
+                        <a href="http://designorbital.com/contango/" title="Contango Theme">Contango Theme</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div> <!-- end .wrapper -->
+</body>
+
+</html>

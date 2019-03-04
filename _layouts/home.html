@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div id="content" class="site-content clearfix">
+    <div id="loop_meta_wrapper">
+        <div class="container_16 clearfix">
+            <div id="loop-meta" class="grid_16">
+                <h1 class="loop-meta-title">Resent Posts</h1>
+                <div class="loop-meta-description"></div>
+            </div> <!-- end #loop-meta -->
+        </div> <!-- end .container_16 -->
+    </div>
+    <div class="container_16 clearfix">
+        <div class="grid_11">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <div id="ob-grid" class="grid-layout">
+                        {% for post in site.posts limit:5 %}
+                        {% include post-preview.html %}
+                        {% endfor %}
+                    </div>
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+        </div> <!-- end .grid_11 -->
+        {% include widget-area.html %}
+    </div> <!-- end .container_16 -->
+
+</div><!-- #content -->

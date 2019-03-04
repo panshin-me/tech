@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<div id="content" class="site-content clearfix">
+    <div class="container_16 clearfix">
+        <div class="grid_11">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <div id="ob-grid" class="grid-layout">
+
+                        <article id="post-6" class="post-6 post type-post status-publish format-standard has-post-thumbnail hentry category-development category-opensource category-projects tag-net tag-c tag-gps tag-maps tag-open-source tag-winform">
+
+                            <div class="entry-meta-group clearfix">
+                                <div class="grid_2 alpha">
+                                    <time class="entry-date entry-time updated" datetime="{{ page.date }}"><a href="{{ page.url }}"
+                                            title="{{ page.date }}" rel="bookmark"><span class="entry-date-day">{{
+                                                page.date | date: "%e" }}</span><span class="entry-date-month-year">{{
+                                                page.date | date: "%b %Y" }}</span></a></time> </div>
+                                <div class="grid_8 omega">
+                                    <h1 class="entry-title entry-title-single">{{ page.title }}</h1>
+                                    <div class="entry-meta">
+                                        <span class="entry-author author vcard">by <span class="entry-author-name fn">{{page.author}}</span></a></span><span
+                                            class="entry-meta-sep">
+                                            &sdot; </span>
+                                        {% if page.comments.size > 0 %}
+                                        <span class="comments-link"><a href="#comments">{{page.comments.size}} Comments</a></span>
+                                        {% endif %}
+                                    </div><!-- .entry-meta -->
+                                </div>
+                            </div>
+
+                            <div class="entry-content clearfix">
+                                {{ content }}
+                            </div> <!-- end .entry-content -->
+
+
+                            <div class="entry-meta-bottom">
+                                <span class="cat-links">
+                                    <span class="entry-utility-prep entry-utility-prep-cat-links">Posted in:</span>
+                                    {% for category in page.categories %}
+                                    <a href="/category/{{ category }}" rel="category tag">{{ category }}</a>{% if
+                                    forloop.last == false %}, {%
+                                    endif %}
+                                    {% endfor %}
+                                </span>
+                                <!-- <span class="entry-meta-sep">
+                                    &sdot; </span><span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">Tagged:</span>
+                                    <a href="http://tech.panshin.me/tag/net" rel="tag">.NET</a>, <a href="http://tech.panshin.me/tag/c" rel="tag">C#</a>,
+                                    <a href="http://tech.panshin.me/tag/gps" rel="tag">GPS</a>, <a href="http://tech.panshin.me/tag/maps" rel="tag">Maps</a>,
+                                    <a href="http://tech.panshin.me/tag/open-source" rel="tag">Open Source</a>, <a href="http://tech.panshin.me/tag/winform"
+                                        rel="tag">WinForm</a>
+                                </span> -->
+                            </div><!-- .entry-meta -->
+                        </article> <!-- end #post-6 .post_class -->
+
+                        <div id="loop-nav-singlular-post" class="clearfix">
+                            <h3 class="assistive-text">Post Navigation</h3>
+                            {% if page.previous.url %}
+                            <div class="loop-nav-previous grid_5 alpha">
+                                <a href="{{page.previous.url}}" rel="prev">
+                                    <span class="meta-nav">&larr;</span>
+                                    Previous Post
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if page.next.url %}
+                            <div class="loop-nav-next grid_5 omega">
+                                <a href="{{page.next.url}}" rel="next">Next Post <span class="meta-nav">&rarr;</span></a>
+                            </div>
+                            {% endif %}
+                        </div><!-- end #loop-nav-singular-post -->
+                    </div>
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+        </div> <!-- end .grid_11 -->
+        {% include widget-area.html %}
+    </div> <!-- end .container_16 -->
+
+</div><!-- #content -->
