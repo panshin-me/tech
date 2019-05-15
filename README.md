@@ -50,3 +50,5 @@ name: Brekfast
 ```
 bundle exec jekyll serve
 ```
+
+[Jekyll cheatsheet](https://devhints.io/jekyll)
