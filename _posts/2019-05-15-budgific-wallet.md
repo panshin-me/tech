@@ -12,7 +12,7 @@ categories:
     - misc
 permalink: /misc/budgific-wallet.html
 image:
-    feature: assets/posts/2018.05.15-budgific-wallet/home.png
+    feature: /assets/posts/2018.05.15-budgific-wallet/home.png
 ---
 Recently I discovered a [PayPower](https://paypower.ca) prepaid credit card that allows paying bills. However, this card has a set of restrictions for those payments. It is not an easy task to follow those restrictions. I tried different ways to make it work: paper, spreadsheet..., however, it was not convenient. 
 <!--more-->
