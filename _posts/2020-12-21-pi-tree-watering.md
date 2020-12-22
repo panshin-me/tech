@@ -16,6 +16,7 @@ image:
 ---
 For a long time, I planned to build a Christmas tree watering system as I always forget to water the Christmas tree on time.
 <!--more-->
+
 This year I have finally done this. The most complicated part was to find the moisture sensor, as that one that I bought was killed by the rust in several days. The rust made the sensor's deep sticks broke the connection, and the sensor was showed it is dry, which costs me a pound around the tree base. 
 The next attempt was with a regular cooper wire as the moisture sensor deep stick.
 Some rust covered the cooper wires as well, but at least it continued to work.
