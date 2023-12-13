@@ -30,7 +30,7 @@ In the next attempt, I used a regular copper wire as the deep stick for the mois
 ## Siphoning Issue
 Siphoning refers to the process of transferring a liquid from one container to another by using a tube or hose that runs from a higher level to a lower level. 
 
-![Diagram](assets/posts/2020-12-21-pi-tree-watering/siphoning.png)
+![Diagram](/assets/posts/2020-12-21-pi-tree-watering/siphoning.png)
 
 When the water level in the source container is higher than the end of the tube, water will flow without the need for the pump to be switched on. Make sure that the end of the tube is positioned higher than the water level.
 
