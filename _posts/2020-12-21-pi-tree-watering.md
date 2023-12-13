@@ -14,41 +14,50 @@ permalink: /technology/pi-tree-watering.html
 image:
     feature: /assets/posts/2020-12-21-pi-tree-watering/diagram.png
 ---
-For a long time, I planned to build a Christmas tree watering system as I always forget to water the Christmas tree on time.
+For a long time, I have been planning to create a Christmas tree watering system because I consistently forget to water the Christmas tree on schedule.
 <!--more-->
 
-This year I have finally done this. The most complicated part was to find the moisture sensor, as that one that I bought was killed by the rust in several days. The rust made the sensor's deep sticks broke the connection, and the sensor was showed it is dry, which costs me a pound around the tree base. 
-The next attempt was with a regular cooper wire as the moisture sensor deep stick.
-Some rust covered the cooper wires as well, but at least it continued to work.
+This year, I finally accomplished this task. The most challenging aspect was finding a reliable moisture sensor, as the one I initially purchased succumbed to rust within a few days. The rust caused the deep sticks of the sensor to break the connection, leading the sensor to incorrectly indicate dryness, and I ended up spending around a pound for nothing around the tree base.
+
+In the next attempt, I used a regular copper wire as the deep stick for the moisture sensor. Although some rust covered the copper wires too, at least it continued to function.
 
 ## Devices
-- [Raspberry PI any model](https://amzn.to/3nE8tsk)
+- [Raspberry Pi (any model)](https://amzn.to/3nE8tsk)
 - [Relay JQC-3FF-S-Z](https://amzn.to/38jBsez)
-- [Moisture Sensor](https://amzn.to/3h5OksS) Do not recommend this one, as it only holds for one week after it broke because of rust. I already ordered another sensor type for the test. However, I used the sensor's processor.
+- [Moisture Sensor](https://amzn.to/3h5OksS) (Note: Avoid the linked sensor as it tends to rust and fail within a week. I recommend using regular copper wires instead.)
 - [Water Pump](https://amzn.to/2WwcDGI)
 
-## Storage [JsonBox](https://jsonbox.io/)
-The system uses JsonBox to store the logs.
-- navigate to the link and get the box id from the link on hte home page
+## Siphoning Issue
+Siphoning refers to the process of transferring a liquid from one container to another by using a tube or hose that runs from a higher level to a lower level. 
+
+![Diagram](assets/posts/2020-12-21-pi-tree-watering/siphoning.png)
+
+When the water level in the source container is higher than the end of the tube, water will flow without the need for the pump to be switched on. Make sure that the end of the tube is positioned higher than the water level.
+
+## Storage: [JsonBin](https://jsonbin.io/)
+The system utilizes JsonBin to store logs. Visit the provided link, and obtain the box ID from the home page.
+
 ## System Setup
 ![Diagram](/assets/posts/2020-12-21-pi-tree-watering/diagram.png)
+
 ### Relay
-Connect the relay to the Raspberry PI:
-- VCC --> Pin 2 (5V)
-- GND --> Pin 20 (Ground)
-- IN  --> Pin 22 (GPIO 25)
+Connect the relay to the Raspberry Pi:
+- VCC → Pin 2 (5V)
+- GND → Pin 20 (Ground)
+- IN  → Pin 22 (GPIO 25)
 
 ### Moisture Sensor
-Connect the moisture sensor to Raspberry PI:
-- VCC --> Pin 4 (5V)
-- GND --> Pin 6 (Ground)
-- DO  --> Pin 3 (GPIO 2)
-The original sensor did not hold for me for more than a week. Rust destroyed the sensor. I replaced this sensor with two regular copper wires used for the house's electricity, and it worked much better. 
+Connect the moisture sensor to Raspberry Pi:
+- VCC → Pin 4 (5V)
+- GND → Pin 6 (Ground)
+- DO  → Pin 3 (GPIO 2)
+(Note: Replace the recommended sensor with two regular copper wires for better durability.)
+
 ### Water Pump
 Connect the water pump to the relay:
-- plus --> COM
-- minus --> DC Power Supply minus
-- Relay ON --> DC Power Supply plus
+- Plus → COM
+- Minus → DC Power Supply minus
+- Relay ON → DC Power Supply plus
 
 ### Application Installation on Raspberry PI
 - `$ git clone https://github.com/ypanshin/pi-tree-watering.git` - clone the repository
@@ -67,6 +76,21 @@ Connect the water pump to the relay:
 ```
 - `$ npm i && npm run build && npm start` - install, build and run the application
 
+### Copy files to Raspberry Pi from another machine
+```
+scp -r ./dist pi@192.168.0.103:~/apps/pi-tree-watering/dist
+```
+
+### Reset the logs and statistics
+Get all nodejs processes
+```
+$ ps aux | grep dist/index
+```
+Reset the statistics by process signals
+```
+$ sudo kill -s SIGUSR1 <pid of node dist/index>
+```
+
 ### Run the application On Raspberry Pi At Startup
 Running the application on boot:
 ```
@@ -79,5 +103,5 @@ su pi -c 'sudo npm start --prefix /home/pi/{path to application} < /dev/null &'
 Write out the lines to save them (CTRL-X) and then `$ sudo reboot` to restart your RPi
 
 ## [Dashboard](https://pi-tree-watering.tech.panshin.me)
-The dashboard is an Ionic / React application that displays statistics and logs from the JsonBox log file.
-Please use the JsonBox Id configured in your Raspberry Pi Application, or for the demo, you can use mine: `box_6f937824ca2f42a8a471`
+The dashboard is an Ionic / React application that displays statistics and logs from the JsonBin.io log file.
+Please use the JsonBin ID configured in your Raspberry Pi Application.
